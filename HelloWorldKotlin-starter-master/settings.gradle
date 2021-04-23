@@ -1,0 +1,12 @@
+rootProject.name='HelloWorldKotlin'
+include ':app'
+
+setBinding(new Binding([gradle:this]))
+
+evaluate(new File(
+        settingsDir.parentFile,
+        'flutter_integration/.android/include_flutter.groovy'
+))
+
+include ':flutter_integration'
+project(':flutter_integration').projectDir = new File('../flutter_integration')
