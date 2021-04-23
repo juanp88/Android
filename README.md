@@ -1,2 +1,3 @@
 # Android
-Desarrollos Android (Kotlin-Flutter)
+Aquí se alojaran las pruebas de concepto para desarrollos Android (Kotlin-Flutter)
+
