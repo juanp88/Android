@@ -14,7 +14,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        startActivity(FlutterActivity.createDefaultIntent(this))
+        startActivity(
+            FlutterActivity
+                .createDefaultIntent(this))
+
+
 
         Handler().postDelayed({
             val intent = Intent(this@MainActivity,

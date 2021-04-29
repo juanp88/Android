@@ -1,42 +1,26 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_integration/pages/error_page.dart';
+import 'package:flutter_integration/routes/ruta.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-void main() => runApp(chooseWidget(window.defaultRouteName));
+void main() => runApp(MyApp());
 
-Widget chooseWidget(String route) {
-  switch (route) {
-    // name of the route defined in the host app
-    case 'splashRoute':
-      return MyFlutterView();
-
-    default:
-      return MyFlutterView();
-  }
-}
-
-class MyFlutterView extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     return MaterialApp(
+      title: 'tabot',
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
-    );
-  }
-}
-
-class SplashScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Container(
-        child: SpinKitDoubleBounce(
-          color: Colors.purple,
-          size: 100.0,
-        ),
-      ),
+      initialRoute: 'webview',
+      routes: generateRoutes(),
+      // onGenerateRoute: (RouteSettings settings) {
+      // return MaterialPageRoute(
+      //   builder: (BuildContext context) => ErrorPage());
+      //},
     );
   }
 }

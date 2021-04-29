@@ -4,14 +4,16 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           //capa inferior, donde se muestran los botones
           Container(
             child: Container(
-              
+              alignment: Alignment.bottomCenter,
+              //color: Colors.white,
               child: ButtonBar(
+                alignment: MainAxisAlignment.center,
                 children: [
                   IconButton(icon: Icon(Icons.settings), onPressed: () {}),
                   ElevatedButton(
@@ -28,6 +30,9 @@ class Home extends StatelessWidget {
           //capa superior donde se muestrean los mensajes
           Scaffold(
             backgroundColor: Colors.transparent,
+            body: Center(
+              child: Text("Hola! Soy Tabot"),
+            ),
           )
         ],
       ),
